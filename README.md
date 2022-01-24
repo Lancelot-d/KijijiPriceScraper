@@ -10,5 +10,7 @@ The goal of the project is to scrape Kijiji, retrieve all the prices of a produc
 
 ## Output
 
+##### Example on iphones 11
+
 <a href="https://imgur.com/SNTiRCw"><img src="https://i.imgur.com/SNTiRCw.png" title="source: imgur.com" /></a>
 
