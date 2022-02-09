@@ -13,11 +13,9 @@ class Spider1(scrapy.Spider):
                     'price': price,
                 }
 
-        #Next page
-        if('page' not in response.url) :url = '//*[@id="mainPageContent"]/div[3]/div[3]/main/div[2]/div[58]/div/a[10]/@href'
-        else:url = '//*[@id="mainPageContent"]/div[3]/div[3]/main/div[2]/div[58]/div/a[10]/@href'.replace("a[10]", "a[11]")
 
-        further_page_url = response.xpath(url).extract_first()
+
+        further_page_url = response.css("div.pagination > a:nth-last-child(2)::attr(href)").get()
         complete_url_next_page = response.urljoin(further_page_url)
         yield scrapy.Request(complete_url_next_page)
 
